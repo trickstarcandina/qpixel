@@ -31,7 +31,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true # trickstar change from false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
@@ -41,7 +41,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on Amazon S3 (see config/storage.yml for options).
-  config.active_storage.service = :s3
+  config.active_storage.service = :production
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -92,7 +92,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  config.action_mailer.delivery_method = :ses
+  # config.action_mailer.delivery_method = :ses
   config.action_mailer.default_url_options = { host: 'meta.codidact.com', protocol: 'https' }
   config.action_mailer.asset_host = 'https://meta.codidact.com'
 
