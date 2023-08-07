@@ -93,6 +93,16 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   # config.action_mailer.delivery_method = :ses
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'email-smtp.ap-southeast-1.amazonaws.com',
+    port: 587,
+    authentication: 'login',
+    domain: 'http://example.com',
+    user_name: 'hihi',
+    password: 'haha',
+    enable_starttls_auto: true,
+  }
   config.action_mailer.default_url_options = { host: 'meta.codidact.com', protocol: 'https' }
   config.action_mailer.asset_host = 'https://meta.codidact.com'
 
